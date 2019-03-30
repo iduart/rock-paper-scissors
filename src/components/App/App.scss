@@ -10,5 +10,14 @@ body {
 .App {
   .intro-page {
     position: fixed;
+
+    &:focus, :hover {
+      .svgBtn {
+        fill: #EEB95C;
+      }
+      .svgBtnText {
+        fill: #000000;
+      }
+    }
   }
 }

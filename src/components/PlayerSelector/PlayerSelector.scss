@@ -1,0 +1,27 @@
+.playerSelector {
+  position: fixed;
+
+  .playerSelectorBtn {
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &:focus, :hover {
+      outline: none;
+      .svgBtn {
+        fill: #EEB95C;
+      }
+      .svgBtnText {
+        fill: #000000;
+      }
+    }
+  }
+
+  .playerInput {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    opacity: 0.6;
+  }
+}
