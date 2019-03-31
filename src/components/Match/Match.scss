@@ -1,0 +1,19 @@
+.match {
+  position: fixed;
+
+  .matchBtn {
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &:focus, :hover {
+      outline: none;
+      .svgBtn {
+        fill: #F47E1F;
+      }
+      .svgBtnText {
+        fill: #000000;
+      }
+    }
+  }
+}

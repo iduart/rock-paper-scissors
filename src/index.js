@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { MainRoutes } from './routes';
+import { Provider } from './state';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <MainRoutes />
-  </BrowserRouter>,
+  <Provider>
+    <BrowserRouter>
+      <MainRoutes />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );

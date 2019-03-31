@@ -550,7 +550,7 @@ const PlayerSelectorSvg = (props) => {
       </foreignObject>
       <foreignObject x="468.8" y="284" width="171.9" height="82.7">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          <button className="playerSelectorBtn" tabIndex="3" onClick={props.onStartMatch}>           
+          <button className="playerSelectorBtn" tabIndex="3" onClick={props.onStartMatch} disabled={props.disabled}>           
             <svg xmlns="http://www.w3.org/2000/svg" width="171.9" height="82.7" viewBox="0 0 200 82.7">
               <g>
                 <path fill="#111" className="svgBtn" d="M171.9 64.9c0 9.8-8 17.8-17.8 17.8H17.8C8 82.7 0 74.7 0 65v-47C0 7.8 8 0 17.8 0h136.3c9.8 0 17.8 8 17.8 17.8v47z"/>

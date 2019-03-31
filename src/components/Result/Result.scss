@@ -1,0 +1,13 @@
+.resultPage {
+  position: fixed;
+
+  &:focus,
+  :hover {
+    .svgBtn {
+      fill: #eeb95c;
+    }
+    .svgBtnText {
+      fill: #000000;
+    }
+  }
+}
