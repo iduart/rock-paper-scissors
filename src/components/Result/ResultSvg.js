@@ -82,7 +82,7 @@ const ResultSvg = ({ winner = "" }) => {
           <path d="M777.3 183.2h-7.4l-3.7 4.8 3.7 4.9h7.4l3.7-4.9zM801 183.2h-7.4l-3.7 4.8 3.7 4.9h7.3l3.7-4.9zM824.6 183.2h-7.4l-3.7 4.8 3.7 4.9h7.4l3.6-4.9zM848.2 183.2h-7.4l-3.6 4.8 3.6 4.9h7.4l3.7-4.9zM871.8 183.2h-7.3l-3.7 4.8 3.7 4.9h7.3l3.7-4.9zM895.5 183.2H888l-3.7 4.8 3.7 4.9h7.4l3.6-4.9z"/>
         </g>
       </g>
-      <text transform="translate(275.4 407.1)" fill="#FFF" font-family="'Cinzel', serif" font-size="36.4">
+      <text transform="translate(158 407.1)" fill="#FFF" font-family="'Cinzel', serif" font-size="36.4">
         {winner}
       </text>
       <Link to="/">

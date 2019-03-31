@@ -8,23 +8,27 @@ const PlayerSelector = props => {
   const [player2, setPlayer2] = useState('');
   const actions = useMatchActions();
   const inputPlayer1 = useRef(null);
+  const isInvalid = !player1 || !player2 || player1 === player2;
 
   useEffect(() => {
     inputPlayer1.current.focus();
-  }, [])
+  }, []);
 
   const onStartMatch = () => {
-    if (!player1 || !player2) {
+    actions.setWinner('');
+    if (isInvalid) {
       return;
     }
     const players = [
       {
         name: player1,
-        score: 0
+        score: 0,
+        move: 0
       },
       {
         name: player2,
-        score: 0
+        score: 0,
+        move: 0
       }
     ];
     actions.setPlayers(players);
@@ -32,7 +36,10 @@ const PlayerSelector = props => {
   };
 
   return (
-    <PlayerSelectorSvg onStartMatch={onStartMatch} disabled={!player1 || !player2}>
+    <PlayerSelectorSvg
+      onStartMatch={onStartMatch}
+      disabled={isInvalid}
+    >
       <input
         ref={inputPlayer1}
         type='text'
