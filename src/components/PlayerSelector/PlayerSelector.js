@@ -14,7 +14,7 @@ const PlayerSelector = props => {
 
   useEffect(() => {
     inputPlayer1.current.focus();
-    if (players.length && players.length == 2) {
+    if (players.length && players.length === 2) {
       setPlayer1(players[0].name);
       setPlayer2(players[1].name);
     }
