@@ -1,0 +1,19 @@
+.statisticsPage {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-align: center;
+  .title {
+    font-size: 70px;
+    color: white;
+  }
+  ul {
+    padding: 0;
+    li {
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      background-color: #B34D22;
+      font-size: 40px;
+    }
+  }
+}

@@ -11,7 +11,7 @@ export const save = (data) => {
 
 export const getStatistics = () => {
   return axios.request({
-    url: `${API_URL}/matches/statistcis`,
+    url: `${API_URL}/matches/statistics`,
     method: 'GET'
   });
 }
