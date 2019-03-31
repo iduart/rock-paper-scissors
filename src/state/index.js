@@ -26,10 +26,9 @@ const reducer = (state, action) => {
     }
     case 'SET_NEXT_ROUND': {
       const { roundCount } = state;
-      const nextRound = roundCount > 3 ? roundCount : roundCount + 1;
       return {
         ...state,
-        roundCount: nextRound,
+        roundCount: roundCount + 1,
         turnCount: 0
       };
     }

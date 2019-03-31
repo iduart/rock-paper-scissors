@@ -3,6 +3,7 @@ import MatchSvg from './MatchSvg';
 import { useGlobalState } from '../../state';
 import useMatchActions from '../../state/actions';
 import { ROCK, SCISSORS, PAPER } from '../../constants';
+import { save as saveMatch } from '../../api/match';
 import './Match.scss';
 
 const Match = ({ history }) => {
@@ -17,18 +18,23 @@ const Match = ({ history }) => {
     setWinner
   } = useMatchActions();
 
+  const player1 = players[0];
+  const player2 = players[1];
+
+  const player1Score = player1 ? player1.score : 0;
+  const player2Score = player2 ? player2.score : 0;
+
   useEffect(() => {
     if (!players.length) {
       history.push('players');
-      return;
     }
   }, []);
 
   useEffect(() => {
-    if (roundCount > 3) {
+    if (player1Score >= 3 || player2Score >= 3) {
       getMatchWinner();
     }
-  }, [roundCount]);
+  }, [player1Score, player2Score]);
 
   useEffect(() => {
     newTurn();
@@ -36,9 +42,18 @@ const Match = ({ history }) => {
 
   useEffect(() => {
     if (winner) {
+      saveMatchResults();
       history.push('result');
     }
   }, [winner]);
+
+  const saveMatchResults = async () => {
+    const data = {
+      players,
+      winner
+    };
+    await saveMatch(data);
+  }
 
   const newTurn = () => {
     if (!players.length) {
@@ -49,9 +64,6 @@ const Match = ({ history }) => {
   };
 
   const getRoundWinner = () => {
-    const player1 = players[0];
-    const player2 = players[1];
-
     if (player1.move === player2.move) {
       return;
     }
@@ -79,17 +91,12 @@ const Match = ({ history }) => {
   };
 
   const getMatchWinner = () => {
-    const player1 = players[0];
-    const player2 = players[1];
-    debugger;
     if (player1.score > player2.score) {
       setWinner(player1.name);
     } else if (player2.score > player1.score) {
       setWinner(player2.name);
-    } else {
-      setWinner(`${player1.name} and ${player2.name}`);
-    }
-  }
+    } 
+  };
 
   const onMoveSelection = move => {
     const newPlayers = [...players];
