@@ -92,6 +92,11 @@ const IntroSvg = () => {
             play
           </text>
         </Link>
+        <Link to="statistics">
+          <text className="svgBtnText" transform="translate(430 600)" fill="#FFF" fontFamily="'Cinzel', serif" fontSize="43">
+            Statistics
+          </text>
+        </Link>
       </svg>
     </div>
   )

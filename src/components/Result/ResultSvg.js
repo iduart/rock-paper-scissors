@@ -85,11 +85,16 @@ const ResultSvg = ({ winner = "" }) => {
       <text transform="translate(158 407.1)" fill="#FFF" font-family="'Cinzel', serif" font-size="36.4">
         {winner}
       </text>
-      <Link to="/">
+      <Link to="/players">
         <path className="svgBtn" fill="#111" d="M479.3 520.1a12 12 0 0 1-12 12h-237a12 12 0 0 1-12-12v-30a12 12 0 0 1 12-12h237a12 12 0 0 1 12 12v30z"/>
         <path className="svgBtn" fill="#1E1E1E" d="M479.3 490.6a12 12 0 0 0-12-12h-237a12 12 0 0 0-12 12v15h261v-15z"/>
         <text className="svgBtnText" transform="translate(277 512.7)" fill="#FFF" font-family="'Cinzel', serif" font-size="26.7">
           play again
+        </text>
+      </Link>
+      <Link to="statistics">
+        <text className="svgBtnText" transform="translate(240 600)" fill="#FFF" fontFamily="'Cinzel', serif" fontSize="43">
+          Statistics
         </text>
       </Link>
       <text transform="translate(58.3 286.2)" fill="#FFF" font-family="'TrajanPro-Bold'" font-size="135">
