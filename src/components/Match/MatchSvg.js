@@ -2,6 +2,8 @@ import React from 'react';
 import { ROCK, PAPER, SCISSORS } from '../../constants';
 
 const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelection = () => {} }) => {
+  const playerFill = (player) => player && player.name && player.name === turn ? "#000000" : "#B44E26";
+  const playerStrokeWidth = (player) => player && player.name && player.name === turn ? "bold" : "";
   return (
     <svg className="match" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1024 768" preserveAspectRatio="none">
       <path fill="#372A2B" d="M272 0h501.6v258.8H272z"/>
@@ -325,10 +327,10 @@ const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelectio
           <circle cx="462.7" cy="355.3" r="3.1"/>
           <circle cx="544.3" cy="273.8" r="3.1"/>
         </g>
-        <text transform="translate(283.6 320.1)" fill="#B44E26" font-family="'Cinzel', serif" font-size="33.5">
+        <text transform="translate(283.6 320.1)" fill={playerFill(player1)} fontFamily="'Cinzel', serif" fontSize="33.5" fontWeight={playerStrokeWidth(player1)}>
           {player1 && player1.name ? player1.name.substr(0, 7) : 'Player 1'}
         </text>
-        <text transform="translate(578.3 320.1)" fill="#B44E26" font-family="'Cinzel', serif" font-size="33.5">
+        <text transform="translate(578.3 320.1)" fill={playerFill(player2)} fontFamily="'Cinzel', serif" fontSize="33.5" fontWeight={playerStrokeWidth(player2)}>
           {player2 && player2.name ? player2.name.substr(0, 7) : 'Player 2'}
         </text>
         <path fill="#F1BB5D" d="M272.5 337.4c0 5.1-4.7 9.3-10.6 9.3h-36.2c-5.9 0-10.6-4.2-10.6-9.3v-59.6c0-5.1 4.7-9.3 10.6-9.3h36.2c5.9 0 10.6 4.2 10.6 9.3v59.6z"/>
@@ -336,7 +338,7 @@ const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelectio
         <circle fill="#FFF" cx="263.7" cy="277.7" r="3.4"/>
         <circle fill="#FFF" cx="227.2" cy="337.3" r="3.4"/>
         <circle fill="#FFF" cx="265.2" cy="337.3" r="3.4"/>
-        <text transform="translate(234.1 320.1)" fill="#B44E26" font-family="'TrajanPro-Bold'" font-size="33.5">
+        <text transform="translate(234.1 320.1)" fill="#B44E26" fontFamily="'TrajanPro-Bold'" font-size="33.5">
           {player1.score || 0}
         </text>
         <path fill="#F1BB5D" d="M807.2 337.4c0 5.1-4.8 9.3-10.6 9.3h-36.3c-5.8 0-10.6-4.2-10.6-9.3v-59.6c0-5.1 4.8-9.3 10.6-9.3h36.3c5.8 0 10.6 4.2 10.6 9.3v59.6z"/>
@@ -344,7 +346,7 @@ const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelectio
         <circle fill="#FFF" cx="798.4" cy="277.7" r="3.4"/>
         <circle fill="#FFF" cx="761.9" cy="337.3" r="3.4"/>
         <circle fill="#FFF" cx="799.9" cy="337.3" r="3.4"/>
-        <text transform="translate(768.8 320.1)" fill="#B44E26" font-family="'TrajanPro-Bold'" font-size="33.5">
+        <text transform="translate(768.8 320.1)" fill="#B44E26" fontFamily="'TrajanPro-Bold'" font-size="33.5">
           {player2.score || 0}
         </text>
       </g>
@@ -355,7 +357,7 @@ const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelectio
       <g>
         <path fill="#FFF" d="M26.4 108.2s9.3-.5 23.2-.8l11.2-.3 12.5-.2 13.4-.1h27.6l13.4.1 23.7.5c14 .3 23.2.8 23.2.8s-9.3.6-23.2 1l-23.7.4-13.4.1H86.7l-13.4-.1-12.5-.2-11.2-.3c-14-.3-23.2-.9-23.2-.9z"/>
       </g>
-      <text transform="translate(28.8 92)" fill="#FFF" font-family="'Cinzel', serif" font-size="31.8">
+      <text transform="translate(28.8 92)" fill="#FFF" fontFamily="'Cinzel', serif" font-size="31.8">
         {turn}
       </text>
       <path opacity=".1" fill="#1D1D1B" d="M1023 599.4H814.7l12.4-1.3 59.7-6c5.5-.5 12.5-2.5 12.9-8 .5-6-7.5-8.8-13.6-9.4l-80.7-8c-25.4-2.5-50.8-5-76.3-4.4-42.8 1-85 10.7-127.7 13.6-10.8.7-21.6 1-32.3-.3-5.3-.7-10.7-1.7-15.9-.5-5.2 1.2-10.1 5.5-10.1 10.8 0 6.2 6.7 10.5 13 11 78.2 5 193.6 2.5-553.6 2.5v16h147.2a291 291 0 0 0-31.2 3.6c-5.1.9-10.3 2-14.5 5-4.1 3-7 8-5.5 12.8 11 4.2 23 5.9 34.7 5 8-.6 18.4-1 21.1 6 .5 1.1.6 2.3 1.4 3.2 1.2 1.5 3.5 1.6 5.5 1.6l164.3 2c5.4 0 11 0 15.9-2.1 3.2-1.4 6-3.7 9.2-5.1 4-1.8 8.4-2 12.8-2.3 26.6-1.5 53.4-1.8 80-1.1 7 .2 14.1.4 20.2-2.7 2.1-1.2 4-2.7 6.3-3.6 3.3-1.3 6.9-1.3 10.4-1.2l51 .9c4.2 0 9.6-.6 10.7-4.5.5-1.8-.1-3.7-1-5.3-4.8-8.7-15.6-11.5-26.4-12.2H1023v-16z"/>
@@ -405,10 +407,10 @@ const MatchSvg = ({ player1 = {}, player2 = {}, turn, roundCount, onMoveSelectio
         </g>
       </g>
       <path opacity=".2" fill="#1D1D1B" d="M0 398.3h1024v21.6H0z"/>
-      <text transform="translate(51.7 141)" fill="#FFF" font-family="'TrajanPro-Bold'" font-size="27">
+      <text transform="translate(51.7 141)" fill="#FFF" fontFamily="'TrajanPro-Bold'" font-size="27">
         TURN
       </text>
-      <text transform="translate(840.5 82.8)" fill="#FFF" font-family="'TrajanPro-Bold'" font-size="28">
+      <text transform="translate(840.5 82.8)" fill="#FFF" fontFamily="'TrajanPro-Bold'" font-size="28">
         {`ROUND ${roundCount}`}
       </text>
     </svg>

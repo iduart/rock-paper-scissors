@@ -1,0 +1,43 @@
+@keyframes windows {
+  1% {
+    fill: #000000;
+  }
+  50% {
+    fill: #FEE600;
+  }
+  100% {
+    fill: #000000;
+  }
+}
+
+@keyframes moveClouds {
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes moveFlags {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(12deg);
+  }
+}
+
+.windowOdd {
+  animation: windows 5s alternate infinite;
+}
+
+.windowEven {
+  animation: windows 5s alternate-reverse infinite;
+}
+
+.clouds {
+  animation: moveClouds 60s alternate infinite;
+}
+
+.flags {
+  animation: moveFlags 1s alternate infinite;
+}
+
