@@ -56,5 +56,6 @@
     ],
     "verbose": false,
     "testEnvironment": "node"
-  }
+  },
+  "homepage": "/rock-paper-scissors"
 }
