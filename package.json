@@ -9,6 +9,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
     "helmet": "^3.15.0",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
@@ -35,6 +36,7 @@
     "dev-client": "react-scripts start",
     "start": "concurrently \"npm:dev-*\" ",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "jest --watch",
     "eject": "react-scripts eject"
   },
@@ -56,5 +58,6 @@
     ],
     "verbose": false,
     "testEnvironment": "node"
-  }
+  },
+  "homepage": "https://ideanb.github.io/rock-paper-scissors"
 }

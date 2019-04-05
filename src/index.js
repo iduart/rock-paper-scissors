@@ -6,7 +6,7 @@ import { Provider } from './state';
 
 ReactDOM.render(
   <Provider>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <MainRoutes />
     </BrowserRouter>
   </Provider>,
