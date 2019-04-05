@@ -83,7 +83,7 @@ const IntroSvg = () => {
           Game of
         </text>
         <text transform="translate(275.1 368)" fill="#FFF" fontFamily="'Cinzel', serif" fontSize="118.3">
-          Drones
+          Rocks
         </text>
         <Link to="players">
          <path fill="#111" className="svgBtn" d="M606.4 453a15 15 0 0 1-15 14.8H477.7a15 15 0 0 1-14.9-14.9v-39.3a15 15 0 0 1 15-15h113.8a15 15 0 0 1 14.9 15v39.3z"/>

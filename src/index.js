@@ -6,7 +6,7 @@ import { Provider } from './state';
 
 ReactDOM.render(
   <Provider>
-    <BrowserRouter>
+    <BrowserRouter basename="/rock-paper-scissors">
       <MainRoutes />
     </BrowserRouter>
   </Provider>,
