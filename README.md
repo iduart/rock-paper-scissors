@@ -1,3 +1,6 @@
+# Demo
+https://iduart.github.io/rock-paper-scissors/
+
 # rock-paper-scissors
 
 ## How to run the project 
